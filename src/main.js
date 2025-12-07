@@ -1,28 +1,22 @@
-// 従来の関数
-function func1(str) {
-  return str;
-}
-console.log(func1('func1です'));
-
-// 関数式
-const func2 = function(str) {
-  return str;
-}
-console.log(func2('func2です'));
-
-// アロー関数
-const func3 = str => {
-  return str;
+// Object
+const myProfileObj = {
+  name: 'etranger2268',
+  age: 26,
 };
-console.log(func3('func3です'));
 
-const func4 = str => str;
-console.log(func4('func4です'));
+const message1 = `名前は${myProfileObj.name}です。年齢は${myProfileObj.age}です。`;
+console.log(message1);
 
-// example
-const sum = (num1, num2) => num1 + num2;
-console.log(sum(10, 20));
+const { name: nameObj, age: ageObj } = myProfileObj;
+const message2 = `名前は${nameObj}です。年齢は${ageObj}です。`;
+console.log(message2);
 
-// return object
-const createUser = (str, num) => ({ name: str, age: num });
-console.log(createUser('etranger2268', 26));
+// Array
+const myProfileArr = ['etranger2268', 26];
+
+const message3 = `名前は${myProfileArr[0]}です。年齢は${myProfileArr[1]}です。`;
+console.log(message3);
+
+const [nameArr, ageArr] = myProfileArr;
+const message4 = `名前は${nameArr}です。年齢は${ageArr}です。`;
+console.log(message4);
