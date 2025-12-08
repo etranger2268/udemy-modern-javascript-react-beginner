@@ -1,18 +1,37 @@
-const num = 1;
-const val1 = num > 0 ? 'trueです' : 'falseです';
-console.log(val1);
+// truthy, falsyについて
+// 'ABC', 0, 10, undefined, null, false, NaN, '', [], {}
+const checkTruthy = (arg) => (arg ? 'truthy' : 'falsy');
+console.log(`'ABC': ${checkTruthy('ABC')}`);
+console.log(`0: ${checkTruthy(0)}`);
+console.log(`10: ${checkTruthy(10)}`);
+console.log(`undefined: ${checkTruthy(undefined)}`);
+console.log(`null: ${checkTruthy(null)}`);
+console.log(`false: ${checkTruthy(false)}`);
+console.log(`NaN: ${checkTruthy(NaN)}`);
+console.log(`'': ${checkTruthy('')}`);
+console.log(`[]: ${checkTruthy([])}`);
+console.log(`{}: ${checkTruthy({})}`);
 
-const val2 = num < 0 ? 'trueです' : 'falseです';
-console.log(val2);
+const flag1 = true;
+const flag2 = false;
 
-const number = 1300;
-console.log(number);
-console.log(number.toLocaleString());
+if (flag1 || flag2) console.log('flag1かflag2はtrueになります');
+if (flag1 && flag2) console.log('flag1とflag2はtrueになります');
 
-const formattedNum =
-  typeof number === 'number' ? number.toLocaleString() : '数値を入力してください';
-console.log(formattedNum);
+// || は左側がtruthの時、その時点で返却する
+const num1 = null;
+const fee1 = num1 || '金額未設定です';
+console.log(fee1);
 
-const checkSum = (num1, num2) => (num1 + num2 > 100 ? '100を超えています' : '許容範囲内です');
-console.log(checkSum(60, 50));
-console.log(checkSum(50, 50));
+const num2 = 100;
+const fee2 = num2 || '金額未設定です';
+console.log(fee2);
+
+// && は左側がfalsyの時、その時点で返却する
+const num3 = undefined;
+const fee3 = num3 && '何か設定されました';
+console.log(fee3);
+
+const num4 = 100;
+const fee4 = num4 && '何か設定されました';
+console.log(fee4);
