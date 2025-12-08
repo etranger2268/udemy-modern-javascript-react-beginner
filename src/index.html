@@ -8,31 +8,68 @@
     <script type="module" src="main.js"></script>
   </head>
   <body>
-    <div>
-      <input type="text" placeholder="TODOを入力">
-      <button type="button">追加</button>
+    <div class="bg-green-200 max-w-md p-2 m-2 rounded">
+      <input type="text" placeholder="TODOを入力" class="bg-white rounded-xl py-1.5 px-4">
+      <button
+        type="button"
+        class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer hover:text-white"
+      >
+        追加
+      </button>
     </div>
 
-    <div>
-      <p>未完了のTODO</p>
-      <ul>
+    <div class="border border-green-500 max-w-md min-h-52 p-2 m-2 rounded-xl">
+      <p class="text-center mt-0 font-black mb-3">未完了のTODO</p>
+      <ul class="list-disc ml-6">
         <li>
-          <div>
-            <p>TODOです</p>
-            <button type="button">完了</button>
-            <button type="button">削除</button>
+          <div class="flex list-disc items-center">
+            <p class="m-1.5">TODOです</p>
+            <button
+              type="button"
+              class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
+            >
+              完了
+            </button>
+            <button
+              type="button"
+              class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
+            >
+              削除
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="flex list-disc items-center">
+            <p class="m-1.5">TODOです</p>
+            <button
+              type="button"
+              class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
+            >
+              完了
+            </button>
+            <button
+              type="button"
+              class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
+            >
+              削除
+            </button>
           </div>
         </li>
       </ul>
     </div>
 
-    <div>
-      <p>完了のTODO</p>
-      <ul>
+    <div class="border border-green-500 max-w-md min-h-52 p-2 m-2 rounded-xl bg-green-100">
+      <p class="text-center mt-0 font-black mb-3">完了のTODO</p>
+      <ul class="list-disc ml-6">
         <li>
-          <div>
-            <p>TODOでした</p>
-            <button type="button">戻す</button>
+          <div class="flex list-disc items-center">
+            <p class="m-1.5">TODOでした</p>
+            <button
+              type="button"
+              class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer"
+            >
+              戻す
+            </button>
           </div>
         </li>
       </ul>
