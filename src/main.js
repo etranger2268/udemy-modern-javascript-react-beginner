@@ -1,22 +1,11 @@
-// Object
-const myProfileObj = {
-  name: 'etranger2268',
+const sayHello = (name = 'ゲスト') => `こんにちは！${name}さん！`;
+console.log(sayHello('etranger2268'));
+console.log(sayHello());
+
+const myProfile = {
   age: 26,
 };
 
-const message1 = `名前は${myProfileObj.name}です。年齢は${myProfileObj.age}です。`;
-console.log(message1);
-
-const { name: nameObj, age: ageObj } = myProfileObj;
-const message2 = `名前は${nameObj}です。年齢は${ageObj}です。`;
-console.log(message2);
-
-// Array
-const myProfileArr = ['etranger2268', 26];
-
-const message3 = `名前は${myProfileArr[0]}です。年齢は${myProfileArr[1]}です。`;
-console.log(message3);
-
-const [nameArr, ageArr] = myProfileArr;
-const message4 = `名前は${nameArr}です。年齢は${ageArr}です。`;
-console.log(message4);
+const { age, name = 'ゲスト' } = myProfile;
+console.log(age);
+console.log(name);
