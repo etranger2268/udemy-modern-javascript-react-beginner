@@ -1,10 +1,18 @@
-const names = ['田中', '山田', 'etranger2268'];
-for (let i = 0; i < names.length; i++) console.log(`${i + 1}番目は${names[i]}です`);
+const num = 1;
+const val1 = num > 0 ? 'trueです' : 'falseです';
+console.log(val1);
 
-const newName = names.map((name, index) => 
-  name === 'etranger2268' ? `${index + 1}番目は${name}です` : `${index + 1}番目は${name}さんです`)
-console.log(newName);
+const val2 = num < 0 ? 'trueです' : 'falseです';
+console.log(val2);
 
-const numbers = [1, 2, 3, 4, 5];
-const odds = numbers.filter((num) => num % 2 === 1);
-console.log(odds);
+const number = 1300;
+console.log(number);
+console.log(number.toLocaleString());
+
+const formattedNum =
+  typeof number === 'number' ? number.toLocaleString() : '数値を入力してください';
+console.log(formattedNum);
+
+const checkSum = (num1, num2) => (num1 + num2 > 100 ? '100を超えています' : '許容範囲内です');
+console.log(checkSum(60, 50));
+console.log(checkSum(50, 50));
