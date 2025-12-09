@@ -21,14 +21,27 @@ const onClickAdd = () => {
   completeButton.className =
     'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
   completeButton.addEventListener('click', () => {
-    alert('完了');
+    // 押された完了ボタンの親にあるliタグ配下の完了ボタンと削除ボタンを削除
+    const moveTarget = completeButton.closest('li');
+    completeButton.nextElementSibling.remove();
+    completeButton.remove();
+
+    // 戻すボタンを生成してdivタグ配下に設定
+    const backButton = document.createElement('button');
+    backButton.innerText = '戻す';
+    backButton.className =
+      'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
+    moveTarget.firstElementChild.appendChild(backButton);
+
+    // 完了リストに移動
+    document.getElementById('complete-list').appendChild(moveTarget);
   });
 
   const deleteButton = document.createElement('button');
   deleteButton.innerText = '完了';
   deleteButton.className =
     'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
-  deleteButton.addEventListener('click', () => {  
+  deleteButton.addEventListener('click', () => {
     // 押された削除ボタンの親にあるliタグを未完了リストから削除
     const deleteTarget = deleteButton.closest('li');
     document.getElementById('incomplete-list').removeChild(deleteTarget);
