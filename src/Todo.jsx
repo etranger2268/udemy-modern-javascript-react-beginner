@@ -5,17 +5,22 @@ export default function Todo() {
   const [incompleteTodos, setIncompleteTodos] = useState(['TODOです1', 'TODOです2']);
   const [completeTodos, setCompleteTodos] = useState(['TODOでした1', 'TODOでした2']);
 
-  const onChangeTodoText = e => setTodoText(e.target.value);
+  const onChangeTodoText = (e) => setTodoText(e.target.value);
 
   const onClickAdd = () => {
     const trimTodoText = todoText.trim();
     if (trimTodoText === '') return;
-    setIncompleteTodos(prev => [...prev, trimTodoText])
+    setIncompleteTodos((prev) => [...prev, trimTodoText]);
     setTodoText('');
-  }
+  };
 
   const onClickDelete = (index) =>
-      setIncompleteTodos(prev => prev.filter((_,idx) => idx !== index))
+    setIncompleteTodos((prev) => prev.filter((_, idx) => idx !== index));
+
+  const onClickComplete = (index) => {
+    setIncompleteTodos((prev) => prev.filter((_, idx) => idx !== index));
+    setCompleteTodos((prev) => [...prev, incompleteTodos[index]]);
+  };
 
   return (
     <>
@@ -30,7 +35,6 @@ export default function Todo() {
         <button
           type="button"
           className="rounded-xl bg-gray-100 px-4 py-1 hover:cursor-pointer hover:bg-gray-200 hover:text-white"
-
           onClick={onClickAdd}
         >
           追加
@@ -45,6 +49,7 @@ export default function Todo() {
                 <p class="m-1.5">{todo}</p>
                 <button
                   type="button"
+                  onClick={() => onClickComplete(index)}
                   className="rounded-xl bg-gray-100 px-4 py-1 hover:cursor-pointer hover:bg-gray-200 hover:text-white"
                 >
                   完了
