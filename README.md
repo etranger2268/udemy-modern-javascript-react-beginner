@@ -4,10 +4,9 @@
 
 ## 技術スタック
 
-- HTML
-- JavaScript
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://ja.vite.dev/)
 - [React](https://ja.react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## 開発
 
@@ -19,7 +18,8 @@ npm install
 
 ### 2. 開発サーバーの起動
 
-JavaScriptとCSSの変更を監視し、自動的にビルドします。
+Vite 開発サーバーを起動します。  
+ファイルの変更を監視し、自動的にブラウザを更新します。
 
 ```bash
 npm run dev
@@ -31,15 +31,19 @@ npm run dev
 npm run build
 ```
 
-### 4. フォーマット
+### 4. 本番用プレビュー
+
+ビルドされたアプリケーションをローカルでプレビューします。  
+このコマンドを実行する前に、`npm run build`を実行する必要があります。
+
+```bash
+npm run preview
+```
+
+### 5. フォーマット
 
 [Biome](https://biomejs.dev/)を使ってコードをフォーマットします。
 
 ```bash
 npm run format
 ```
-
-## プレビュー
-
-`src/index.html`をブラウザで開いてください。  
-正しく表示するためには、事前に`npm run build`を実行する必要があります。
